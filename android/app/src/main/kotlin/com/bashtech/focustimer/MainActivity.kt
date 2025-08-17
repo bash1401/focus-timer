@@ -1,4 +1,4 @@
-package com.example.taptimer
+package com.bashtech.focustimer
 
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
@@ -9,7 +9,7 @@ import android.media.RingtoneManager
 import android.net.Uri
 
 class MainActivity : FlutterActivity() {
-    private val CHANNEL = "com.example.taptimer/audio"
+    private val CHANNEL = "com.bashtech.focustimer/audio"
     private var currentRingtone: Ringtone? = null
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {

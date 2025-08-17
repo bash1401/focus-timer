@@ -34,4 +34,11 @@ class AppConfig {
   static const String backgroundColor = "#1E1E1E";
   static const String surfaceColor = "#2D2D2D";
   static const String textColor = "#FFFFFF";
+  
+  // Test IDs for Development
+  static const String testAdMobAppId = "ca-app-pub-3940256099942544~3347511713";
+  static const String testAdMobBannerId = "ca-app-pub-3940256099942544/6300978111";
+  static const String testAdMobInterstitialId = "ca-app-pub-3940256099942544/1033173712";
+  static const String testFacebookAppId = "123456789012345";
+  static const String testFacebookBannerId = "123456789012345_123456789012345";
 }

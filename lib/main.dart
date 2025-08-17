@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'screens/timer_screen.dart';
 import 'services/audio_service.dart';
+import 'config/app_config.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  
+  // Initialize Google Mobile Ads
+  await MobileAds.instance.initialize();
   
   // Initialize audio service
   await AudioService.initialize();

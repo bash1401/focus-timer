@@ -7,6 +7,7 @@ import '../widgets/task_input.dart';
 import '../widgets/productivity_stats.dart';
 import '../widgets/current_task_display.dart';
 import '../widgets/floating_notification.dart';
+import '../widgets/app_banner.dart';
 
 import 'settings_screen.dart';
 
@@ -212,8 +213,9 @@ class _TimerScreenState extends State<TimerScreen> with TickerProviderStateMixin
               },
             ),
             
-            // Main Timer Area - Flexible space
-            Flexible(
+            // Main Timer Area - Reduced space to accommodate banner
+            Expanded(
+              flex: 2,
               child: GestureDetector(
                 onHorizontalDragEnd: (details) {
                   if (details.primaryVelocity! > 0) {
@@ -241,6 +243,9 @@ class _TimerScreenState extends State<TimerScreen> with TickerProviderStateMixin
                 ),
               ),
             ),
+            
+            // App Banner
+            const AppBanner(),
             
             // Session Type Buttons
             ListenableBuilder(

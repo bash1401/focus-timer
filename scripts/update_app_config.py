@@ -309,45 +309,52 @@ def copy_app_icons(config):
             shutil.copy2(source_icon, icon_path)
             print(f"✅ Copied icon to {icon_path}")
 
-def create_config_reader():
+def create_config_reader(config):
     """Create a Dart file to read the configuration in the app"""
-    config_reader_content = '''
+    config_reader_content = f'''
 import 'package:flutter/foundation.dart';
 
-class AppConfig {
-  static const String appName = "Focus Timer";
-  static const String appVersion = "1.0.0";
-  static const int buildNumber = 1;
-  static const String description = "A simple and effective Pomodoro timer for focused work sessions";
+class AppConfig {{
+  static const String appName = "{config['app']['name']}";
+  static const String appVersion = "{config['app']['version']}";
+  static const int buildNumber = {config['app']['build_number']};
+  static const String description = "{config['app']['description']}";
   
   // Developer Information
-  static const String developerName = "BashTech";
-  static const String developerWebsite = "https://www.bashtech.info/";
-  static const String developerEmail = "support@bashtech.info";
+  static const String developerName = "{config['app']['developer']['name']}";
+  static const String developerWebsite = "{config['app']['developer']['website']}";
+  static const String developerEmail = "{config['app']['developer']['email']}";
   
   // URLs
-  static const String privacyPolicy = "https://www.bashtech.info/privacy";
-  static const String termsOfService = "https://www.bashtech.info/terms";
-  static const String support = "https://www.bashtech.info/support";
-  static const String buyCoffee = "https://www.bashtech.info/buy-coffee";
+  static const String privacyPolicy = "{config['app']['urls']['privacy_policy']}";
+  static const String termsOfService = "{config['app']['urls']['terms_of_service']}";
+  static const String support = "{config['app']['urls']['support']}";
+  static const String buyCoffee = "{config['app']['urls']['buy_coffee']}";
   
   // Default Settings
-  static const int defaultWorkDuration = 25;
-  static const int defaultShortBreakDuration = 5;
-  static const int defaultLongBreakDuration = 15;
-  static const int defaultSessionsBeforeLongBreak = 4;
-  static const bool defaultAutoStartBreaks = true;
-  static const bool defaultAutoStartWork = true;
-  static const bool defaultSoundEnabled = true;
-  static const bool defaultVibrationEnabled = true;
+  static const int defaultWorkDuration = {config['app']['defaults']['work_duration']};
+  static const int defaultShortBreakDuration = {config['app']['defaults']['short_break_duration']};
+  static const int defaultLongBreakDuration = {config['app']['defaults']['long_break_duration']};
+  static const int defaultSessionsBeforeLongBreak = {config['app']['defaults']['sessions_before_long_break']};
+  static const bool defaultAutoStartBreaks = {str(config['app']['defaults']['auto_start_breaks']).lower()};
+  static const bool defaultAutoStartWork = {str(config['app']['defaults']['auto_start_work']).lower()};
+  static const bool defaultSoundEnabled = {str(config['app']['defaults']['sound_enabled']).lower()};
+  static const bool defaultVibrationEnabled = {str(config['app']['defaults']['vibration_enabled']).lower()};
   
   // Theme Colors
-  static const String primaryColor = "#00BCD4";
-  static const String secondaryColor = "#009688";
-  static const String backgroundColor = "#1E1E1E";
-  static const String surfaceColor = "#2D2D2D";
-  static const String textColor = "#FFFFFF";
-}
+  static const String primaryColor = "{config['app']['theme']['primary_color']}";
+  static const String secondaryColor = "{config['app']['theme']['secondary_color']}";
+  static const String backgroundColor = "{config['app']['theme']['background_color']}";
+  static const String surfaceColor = "{config['app']['theme']['surface_color']}";
+  static const String textColor = "{config['app']['theme']['text_color']}";
+  
+  // Test IDs for Development
+  static const String testAdMobAppId = "{config['app']['test_ids']['admob_app_id']}";
+  static const String testAdMobBannerId = "{config['app']['test_ids']['admob_banner_id']}";
+  static const String testAdMobInterstitialId = "{config['app']['test_ids']['admob_interstitial_id']}";
+  static const String testFacebookAppId = "{config['app']['test_ids']['facebook_app_id']}";
+  static const String testFacebookBannerId = "{config['app']['test_ids']['facebook_banner_id']}";
+}}
 '''
     
     # Create config directory if it doesn't exist
@@ -376,7 +383,7 @@ def main():
         update_web_manifest(config)
         update_main_dart(config)
         copy_app_icons(config)
-        create_config_reader()
+        create_config_reader(config)
         
         print("\n🎉 App configuration update completed successfully!")
         print(f"📱 App: {config['app']['name']}")

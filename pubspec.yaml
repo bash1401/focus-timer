@@ -43,6 +43,9 @@ dependencies:
   
   # Audio playback for timer sounds
   audioplayers: ^5.2.1
+  
+  # Google AdMob for banner ads
+  google_mobile_ads: ^4.0.0
 
 dev_dependencies:
   flutter_test:

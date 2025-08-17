@@ -10,16 +10,24 @@ app:
   build_number: 1
   
   # Package/Bundle Identifiers
-  android_package_name: "com.example.taptimer"
-  ios_bundle_identifier: "com.example.taptimer"
-  macos_bundle_identifier: "com.example.taptimer"
+  android_package_name: "com.bashtech.focustimer"
+  ios_bundle_identifier: "com.bashtech.focustimer"
+  macos_bundle_identifier: "com.bashtech.focustimer"
   
   # App Store Information
   app_store:
-    android_package_name: "com.example.taptimer"
-    ios_bundle_identifier: "com.example.taptimer"
-    app_store_id: ""  # iOS App Store ID
-    play_store_id: ""  # Google Play Store ID
+    android_package_name: "com.bashtech.focustimer"
+    ios_bundle_identifier: "com.bashtech.focustimer"
+    app_store_id: "test_app_store_id_123456"  # iOS App Store ID
+    play_store_id: "test_play_store_id_123456"  # Google Play Store ID
+    
+  # Test IDs for Development
+  test_ids:
+    admob_app_id: "ca-app-pub-3940256099942544~3347511713"  # Test AdMob App ID
+    admob_banner_id: "ca-app-pub-3940256099942544/6300978111"  # Test Banner Ad ID
+    admob_interstitial_id: "ca-app-pub-3940256099942544/1033173712"  # Test Interstitial Ad ID
+    facebook_app_id: "123456789012345"  # Test Facebook App ID
+    facebook_banner_id: "123456789012345_123456789012345"  # Test Facebook Banner ID
     
   # Developer Information
   developer:

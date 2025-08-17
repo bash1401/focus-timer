@@ -6,7 +6,7 @@ import 'dart:io' show Platform;
 class AudioService {
   static final AudioPlayer _audioPlayer = AudioPlayer();
   static bool _isInitialized = false;
-  static const MethodChannel _channel = MethodChannel('com.example.taptimer/audio');
+  static const MethodChannel _channel = MethodChannel('com.bashtech.focustimer/audio');
   
   // Stop any currently playing sound
   static Future<void> stopSound() async {
