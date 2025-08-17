@@ -1,0 +1,112 @@
+# App Configuration File
+# This file contains all app metadata and configuration settings
+# Update values here and run the update script to apply changes across all platforms
+
+app:
+  # Basic App Information
+  name: "Focus Timer"
+  description: "A simple and effective Pomodoro timer for focused work sessions"
+  version: "1.0.0"
+  build_number: 1
+  
+  # Package/Bundle Identifiers
+  android_package_name: "com.example.taptimer"
+  ios_bundle_identifier: "com.example.taptimer"
+  macos_bundle_identifier: "com.example.taptimer"
+  
+  # App Store Information
+  app_store:
+    android_package_name: "com.example.taptimer"
+    ios_bundle_identifier: "com.example.taptimer"
+    app_store_id: ""  # iOS App Store ID
+    play_store_id: ""  # Google Play Store ID
+    
+  # Developer Information
+  developer:
+    name: "BashTech"
+    website: "https://www.bashtech.info/"
+    email: "support@bashtech.info"
+    
+  # App Icons
+  icons:
+    source: "assets/sounds/images/logo.png"
+    android_adaptive_icon: true
+    ios_icon_sizes: [20, 29, 40, 60, 76, 83.5, 1024]
+    
+  # Splash Screen
+  splash:
+    background_color: "#1E1E1E"
+    icon_color: "#00BCD4"
+    
+  # Theme Configuration
+  theme:
+    primary_color: "#00BCD4"
+    secondary_color: "#009688"
+    background_color: "#1E1E1E"
+    surface_color: "#2D2D2D"
+    text_color: "#FFFFFF"
+    
+  # Default Settings
+  defaults:
+    work_duration: 25  # minutes
+    short_break_duration: 5  # minutes
+    long_break_duration: 15  # minutes
+    sessions_before_long_break: 4
+    auto_start_breaks: true
+    auto_start_work: true
+    sound_enabled: true
+    vibration_enabled: true
+    
+  # Features
+  features:
+    task_tracking: true
+    productivity_stats: true
+    daily_goals: true
+    notifications: true
+    sound_effects: true
+    haptic_feedback: true
+    
+  # Permissions
+  permissions:
+    android:
+      - "android.permission.VIBRATE"
+      - "android.permission.MODIFY_AUDIO_SETTINGS"
+      - "android.permission.INTERNET"
+    ios:
+      - "NSCameraUsageDescription"
+      - "NSMicrophoneUsageDescription"
+      
+  # Build Configuration
+  build:
+    min_android_sdk: 21
+    target_android_sdk: 33
+    min_ios_version: "11.0"
+    min_macos_version: "10.14"
+    
+  # Analytics and Services
+  services:
+    firebase: false
+    crashlytics: false
+    analytics: false
+    
+  # URLs and Links
+  urls:
+    privacy_policy: "https://www.bashtech.info/privacy"
+    terms_of_service: "https://www.bashtech.info/terms"
+    support: "https://www.bashtech.info/support"
+    buy_coffee: "https://www.bashtech.info/buy-coffee"
+    
+  # Localization
+  localization:
+    default_language: "en"
+    supported_languages: ["en"]
+    
+  # Release Notes
+  release_notes:
+    "1.0.0":
+      - "Initial release"
+      - "Pomodoro timer with work and break sessions"
+      - "Task tracking and productivity statistics"
+      - "Customizable timer durations"
+      - "Sound and vibration notifications"
+      - "Dark theme UI"
